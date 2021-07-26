@@ -1,6 +1,23 @@
 .App {
   text-align: center;
 }
+main{
+  text-align: center;
+}
+div{
+  text-align: center;
+  margin: auto;
+}
+.card {
+  margin: 20px;
+}
+
+header ,footer{
+  color: white;
+  background-color: #3c5570;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
 
 .App-logo {
   height: 40vmin;
