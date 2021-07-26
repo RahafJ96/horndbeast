@@ -1,11 +1,24 @@
 import React from 'react';
+import "../App.css";
 import HornedBeasts from './HorndBeast';
+import data from '../data.json';
 
 class Main extends React.Component {
     render() {
-        return (
-        <main>
-            <HornedBeasts
+        
+        
+
+
+    return (
+            
+            <main>
+                { 
+                data.map((item,i)=>{
+                    return  <HornedBeasts key={i} title={item.title} image_url={item.image_url} description={item.description}/>
+                   
+                })
+                }
+            {/* <HornedBeasts
             title="UniWhal"               
             imgUrl="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"
             description="A unicorn and a narwhal nuzzling their horns" />
@@ -18,11 +31,12 @@ class Main extends React.Component {
             <HornedBeasts
             title="Unicorn Head" 
             imgUrl="https://www.dhresource.com/0x0s/f2-albu-g5-M00-1A-11-rBVaI1hsIIiALxKzAAIHjSU3VkE490.jpg/wholesale-halloween-costume-prop-unicorn.jpg"
-            description="Someone wearing a creepy unicorn head mask"/>
+            description="Someone wearing a creepy unicorn head mask"/> */}
 
         </main>
-        )
-    }
+        
+    )
+}
 }
 
 export default Main;
