@@ -3,29 +3,40 @@ import "../App.css";
 import HornedBeasts from './HorndBeast';
 import data from '../data.json';
 import Row from 'react-bootstrap/Row'
+import SelectedBeast from './SelectedBeast';
 
 
 
 class Main extends React.Component {
-    render() {
-        
-        
-
-
-    return (
+    
+    
+    constructor(props) {
+        super(props)
+        this.state = {
             
-        <main>
-            <Row xs={1} md={4} className="g-4">
-                { 
 
-                data.map((item,i)=>
-                {
-                    return  <HornedBeasts key={i} title={item.title} image_url={item.image_url} description={item.description}/>
-                   
-                })
-            }
-            </Row>
-            {/* <HornedBeasts
+        }
+    }
+
+
+
+    render() {
+
+        return (
+
+            <main>
+                <Row xs={1} md={4} className="g-4">
+                    {
+
+                        data.map((item, i) => {
+                            return <><HornedBeasts key={i} title={item.title} image_url={item.image_url} description={item.description} />
+
+                            </>
+
+                        })
+                    }
+                </Row>
+                {/* <HornedBeasts
             title="UniWhal"               
             imgUrl="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"
             description="A unicorn and a narwhal nuzzling their horns" />
@@ -40,10 +51,10 @@ class Main extends React.Component {
             imgUrl="https://www.dhresource.com/0x0s/f2-albu-g5-M00-1A-11-rBVaI1hsIIiALxKzAAIHjSU3VkE490.jpg/wholesale-halloween-costume-prop-unicorn.jpg"
         description="Someone wearing a creepy unicorn head mask"/> */}
 
-        </main>
-        
-    )
-}
+            </main>
+
+        )
+    }
 }
 
 export default Main;

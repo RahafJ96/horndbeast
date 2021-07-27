@@ -5,7 +5,7 @@ import "../App.css";
 class Header extends React.Component{
     render(){
         return(
-            <header><h1> Welcome to our website</h1> </header>
+            <header><h1> Welcome to Gallery Of Horns</h1> </header>
 
             )
     
