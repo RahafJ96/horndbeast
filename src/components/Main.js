@@ -2,6 +2,7 @@ import React from 'react';
 import "../App.css";
 import HornedBeasts from './HorndBeast';
 import data from '../data.json';
+import Row from 'react-bootstrap/Row'
 
 
 
@@ -14,12 +15,16 @@ class Main extends React.Component {
     return (
             
         <main>
+            <Row xs={1} md={4} className="g-4">
                 { 
-                data.map((item,i)=>{
+
+                data.map((item,i)=>
+                {
                     return  <HornedBeasts key={i} title={item.title} image_url={item.image_url} description={item.description}/>
                    
                 })
             }
+            </Row>
             {/* <HornedBeasts
             title="UniWhal"               
             imgUrl="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"
