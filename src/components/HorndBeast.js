@@ -25,16 +25,16 @@ class HornedBeasts extends React.Component {
         )
     }
   
-    clickFunc = () => {
-        this.setState({
-            click: this.state.click + 1
-        })
-    }
-    cancelFunc = () =>{
-        this.setState({
-            click: this.state.click - 1
-        })
-    }
+    // clickFunc = () => {
+    //     this.setState({
+    //         click: this.state.click + 1
+    //     })
+    // }
+    // cancelFunc = () =>{
+    //     this.setState({
+    //         click: this.state.click - 1
+    //     })
+    // }
 
 
 
@@ -50,7 +50,7 @@ class HornedBeasts extends React.Component {
                                 {this.props.description}<br />
                                 Number of likes ❤️: {this.state.numberOfLike}
                             </Card.Text>
-                            <SelectedBeast selectFun={this.clickFunc} cancelFunc={this.cancelFunc} image_url={this.props.image_url} description={this.props.description} title={this.props.title} />
+                            <SelectedBeast  image_url={this.props.image_url} description={this.props.description} title={this.props.title} />
 
                         </Card.Body>
                     </Card>

@@ -13,32 +13,21 @@ class SelectedBeast extends React.Component {
         super(props)
         this.state = {
             show: false,
-
-            title: "",
-            image_src: '',
-            desc: ''
-
         }
     }
 
     handelmodal() {
-        this.selectClickFun()
         this.setItems()
         this.setState({
-            show: !this.state.show
+            show: true
         })
     }
     removeModal = () => {
         this.setState({
-            show: !this.state.show
+            show: false
         })
     }
 
-    selectClickFun = () => {
-        this.props.cancelFunc();
-        this.props.selectFun();
-
-    }
 
     setItems = () => {
         this.setState({
@@ -48,16 +37,7 @@ class SelectedBeast extends React.Component {
         })
 
     }
-    // handleShow=()=>{
-    //     this.props.callingFunction();
-    // }
 
-    // handleClose=()=>{
-
-    // }
-    // show=()=>{
-    //     return false;
-    // }
     render() {
         return (
             <>
@@ -72,7 +52,7 @@ class SelectedBeast extends React.Component {
                     </Modal.Header>
 
                     <Modal.Body>
-                        <Image variant="top" src={this.state.image_url} alt={"test"} width={300} />
+                        <Image variant="top" src={this.state.image_url} alt={"test"} width={300} /><br/>
                         {this.state.description}
                     </Modal.Body>
 
