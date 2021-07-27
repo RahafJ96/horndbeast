@@ -3,10 +3,10 @@
 
 }
 
-section{
+/* section{
   display: inline-block;
   margin: 20px;
-}
+} */
 
 
 .App {
@@ -14,18 +14,9 @@ section{
 }
 main{
   text-align: center;
-}
-.rowCard{
-  content: "";
-  clear: both;
-  display: table;
+  margin: 0;
 }
 
-.column{
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
 .card {
   margin: 20px;
   width: 18rem;

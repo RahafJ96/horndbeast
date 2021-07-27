@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+
 
 class HornedBeasts extends React.Component {
     
@@ -37,7 +39,9 @@ class HornedBeasts extends React.Component {
                 <img src={this.props.imgUrl} />
                 <p>{this.props.description}</p> */}
                 <section>
-                <Card style={{ width: '18rem'   }}>
+                <Col>
+
+                <Card style={{ width: '18rem' , height: "35rem"  }}>
                     <Card.Img onClick={this.incrementNumber} variant="top" src={this.props.image_url} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
@@ -51,6 +55,7 @@ class HornedBeasts extends React.Component {
                         {/* <Button onClick={this.decrementNumber} variant="primary">💔 - {this.state.numberOfDisike}</Button> */}
                     </Card.Body>
                 </Card>
+                </Col>
                 </section>
             </>
         )
