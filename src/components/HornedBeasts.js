@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 
-
 class HornedBeasts extends React.Component {
 
     constructor(props) {
@@ -25,7 +24,7 @@ class HornedBeasts extends React.Component {
         )
     }
     modalData=()=>{
-        this.props.submitButton(this.props.image_url,this.props.description,this.props.title)
+        this.props.submitButton( this.props.image_url,this.props.description,this.props.title,this.props.horns)
 
     }
     render() {
@@ -38,7 +37,8 @@ class HornedBeasts extends React.Component {
                             <Card.Title>{this.props.title}</Card.Title>
                             <Card.Text >
                                 {this.props.description}<br />
-                                Number of likes ❤️: {this.state.numberOfLike}
+                                Number of likes ❤️: {this.state.numberOfLike}<br/>
+                                {this.props.horns}
                             </Card.Text>
                         <Button onClick={this.modalData}>Display</Button>
                         </Card.Body>                        
