@@ -4,7 +4,6 @@ import "../App.css";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import SelectedBeast from './SelectedBeast';
 
 
 
@@ -15,6 +14,7 @@ class HornedBeasts extends React.Component {
         this.state = {
             numberOfLike: 0,
         }
+
     }
 
     incrementNumber = () => {
@@ -24,20 +24,10 @@ class HornedBeasts extends React.Component {
             }
         )
     }
-  
-    clickFunc = () => {
-        this.setState({
-            click: this.state.click + 1
-        })
+    modalData=()=>{
+        this.props.submitButton(this.props.image_url,this.props.description,this.props.title)
+
     }
-    cancelFunc = () =>{
-        this.setState({
-            click: this.state.click - 1
-        })
-    }
-
-
-
     render() {
         return (
             <>
@@ -50,9 +40,8 @@ class HornedBeasts extends React.Component {
                                 {this.props.description}<br />
                                 Number of likes ❤️: {this.state.numberOfLike}
                             </Card.Text>
-                            <SelectedBeast selectFun={this.clickFunc} cancelFunc={this.cancelFunc} image_url={this.props.image_url} description={this.props.description} title={this.props.title} />
-
-                        </Card.Body>
+                        <Button onClick={this.modalData}>Display</Button>
+                        </Card.Body>                        
                     </Card>
                 </Col>
             </>
