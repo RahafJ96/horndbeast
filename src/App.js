@@ -5,7 +5,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import SelectedBeast from './components/SelectedBeast';
 import Button from 'react-bootstrap/Button';
-import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
+import FilterForm from './components/FilterForm';
 
 
 
@@ -17,26 +17,28 @@ class App extends React.Component {
       image_url: '',
       description: '',
       title:'',
+      horns: 0,
       show: false,
     }
   }
 
-  submitButton = (image_url,description,title) => {
+  submitButton = (image_url,description,title,horns) => {
   this.setState ({
     image_url: image_url,
     description: description,
     title:title,
+    horns:horns,
     show: true
   })
   console.log(  'x=' ,image_url );
 
   }
 
+
   handleCancel=()=>{
     this.setState({
       show: false
     })
-    console.log(  'y=' ,this.state.image_url );
 
   }
   
@@ -45,8 +47,9 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <FilterForm submitForm={this.submitForm}/>
         <Main submitButton={this.submitButton}/>
-        <SelectedBeast  show={this.state.show} handleCancel={this.handleCancel} image_url={this.state.image_url} description={this.state.description} title={this.state.title} />
+        <SelectedBeast  show={this.state.show} handleCancel={this.handleCancel} image_url={this.state.image_url} description={this.state.description} title={this.state.title} horns={this.state.horns}/>
         <Footer />
       </div>
     )
