@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import SelectedBeast from './components/SelectedBeast';
 import Button from 'react-bootstrap/Button';
 import FilterForm from './components/FilterForm';
+import data from './data.json';
+
 
 
 
@@ -17,23 +19,9 @@ class App extends React.Component {
       image_url: '',
       description: '',
       title:'',
-      horns: 0,
       show: false,
     }
   }
-
-  submitButton = (image_url,description,title,horns) => {
-  this.setState ({
-    image_url: image_url,
-    description: description,
-    title:title,
-    horns:horns,
-    show: true
-  })
-  console.log(  'x=' ,image_url );
-
-  }
-
 
   handleCancel=()=>{
     this.setState({
@@ -41,15 +29,27 @@ class App extends React.Component {
     })
 
   }
+
+  handleOpen=()=>{
+    this.setState({
+      show: true
+    })
+  }
   
+  getData=(image_url,description,title)=>{
+    this.setState({
+      image_url:image_url,
+      description: description,
+      title:title,
+    })
+  }
 
   render() {
     return (
       <div>
         <Header />
-        <FilterForm submitForm={this.submitForm}/>
-        <Main submitButton={this.submitButton}/>
-        <SelectedBeast  show={this.state.show} handleCancel={this.handleCancel} image_url={this.state.image_url} description={this.state.description} title={this.state.title} horns={this.state.horns}/>
+        <Main data={data} getData={this.getData} handleOpen={this.handleOpen} />
+        <SelectedBeast  show={this.state.show} handleCancel={this.handleCancel} image_url={this.state.image_url} description={this.state.description} title={this.state.title}/>
         <Footer />
       </div>
     )
