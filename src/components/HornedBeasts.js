@@ -23,10 +23,14 @@ class HornedBeasts extends React.Component {
             }
         )
     }
-    modalData=()=>{
-        this.props.submitButton( this.props.image_url,this.props.description,this.props.title,this.props.horns)
 
+    getSelected=()=>{
+        this.props.handleOpen();
+        this.props.getData(this.props.image_url,this.props.description,this.props.title)
     }
+
+
+
     render() {
         return (
             <>
@@ -40,7 +44,7 @@ class HornedBeasts extends React.Component {
                                 Number of likes ❤️: {this.state.numberOfLike}<br/>
                                 {this.props.horns}
                             </Card.Text>
-                        <Button onClick={this.modalData}>Display</Button>
+                        <Button onClick={this.getSelected}>Display</Button>
                         </Card.Body>                        
                     </Card>
                 </Col>
